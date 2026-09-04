@@ -76,7 +76,7 @@ list {
   position: absolute;
   left: 25px;
   z-index: 300;
-  padding: 6px 0;
+  padding: 7px 0;
   font-weight: bold;
   font-size: var(--font-size);
   color: var(--fg);
