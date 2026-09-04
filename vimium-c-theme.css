@@ -3,7 +3,7 @@
 * {
 /*insertroot*/
 
-  --font-size: 17px;
+  --font-size: 15px;
   --font-size-link: 12px;
   --font-weight: normal;
   --font: Source Code Pro, sans;
@@ -26,7 +26,7 @@
   --nbg: #131212;
   --nfg: #c5c9c5;
   --naccent-fg: #2e323c;
-  --nborder: #414754;
+  --nborder: #555555;
   --ntitle: #b0b5bf;
   --ntitle-accent: #5da6dc;
   --nlink: #7f8792;
@@ -36,24 +36,25 @@
 }
 
 #toolbar {
-  top: 10px;
-  right: 14px;
-  opacity: 0;
+    display: none;
 }
 
-#toolbar:hover {
-  opacity: 1;
+body::after {
+    border: none;
 }
 
-
-#bar,
-#input,
-#list {
+body {
   background: var(--bg);
   font-weight: var(--font-weight);
+  border: 2px transparent solid;
   border-radius: 0px !important;
-  border-color: var(--accent-fg);
+  border-color: var(--nborder);
   border-width: 2px;
+}
+
+list {
+  border-top: 2px transparent solid;
+  border-color: var(--nborder);
 }
 
 .has-dark #bar,
@@ -65,14 +66,13 @@
 
 #bar {
   padding: 10px;
-  border-width: 1px;
-  border-color: var(--accent-fg);
-  border-radius: 0px !important;
+  border-bottom: 2px transparent solid;
+  border-color: var(--nborder);
 }
 
 
 #bar::before {
-  content: "➤";
+  content: "$";
   position: absolute;
   left: 25px;
   z-index: 300;
@@ -90,21 +90,21 @@
 #input {
   padding: var(--padding) 38px;
   color: var(--title);
-  border: 2px;
+  border: 2px transparent solid;
   border-radius: 0px !important;
-  border-color: var(--accent-fg);
+  border-color: var(--nborder);
   box-shadow: none;
+  font-size: var(--font-size);
 }
 
 .has-dark #input {
   color: var(--ntitle);
 }
 
-.item {
-    border-radius: 0px !important;
-}
-
 .item,
+.item *,
+.item::before,
+.item::after,
 .item:hover,
 .item.s {
   transition: none !important;
@@ -133,8 +133,6 @@
 .item.s,
 .item:hover {
   background-color: var(--accent-fg);
-  border: 3px transparent solid;
-  border-radius: 0px !important;
   cursor: pointer;
 }
 
@@ -175,7 +173,7 @@
 
 
 .item .bottom {
-  margin-top: -14px;
+  margin-top: -10px;
   padding-left: 14px;
 }
 
@@ -195,5 +193,13 @@
 
 .has-dark .item .bottom a match {
   color: var(--nlink-accent);
+}
+
+body,
+#bar,
+#input,
+#list {
+  opacity: 1 !important;
+  background-color: #131212 !important;
 }
 
