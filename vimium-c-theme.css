@@ -1,7 +1,8 @@
-/* VIMIUM C DARK THEME */
-
+/* #omni */
 
 * {
+/*insertroot*/
+
   --font-size: 17px;
   --font-size-link: 12px;
   --font-weight: normal;
@@ -9,102 +10,29 @@
   --padding: 0px;
   --shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
-  --item-bg:       #131212;
-  --bg:            #282c34;
-  --fg:            #969ca8;
-  --accent-fg:     #2e323c;
-  --border:        #414754;
-  --title:         #b0b5bf;
-  --title-accent:  #5da6dc;
-  --link:          #7f8792;
-  --link-accent:   #e0b97d;
+  /* ---------- DAY THEME ---------- */
 
-  --nitem-bg:      #131212;
-  --nbg:           #282c34;
-  --nfg:           #969ca8;
-  --naccent-fg:    #2e323c;
-  --nborder:       #414754;
-  --ntitle:        #b0b5bf;
+  --bg: #131212;
+  --fg: #c5c9c5;
+  --accent-fg: #2e323c;
+  --border: #414754;
+  --title: #b0b5bf;
+  --title-accent: #5da6dc;
+  --link: #7f8792;
+  --link-accent: #ffbb55;
+
+  /* ---------- NIGHT THEME ---------- */
+
+  --nbg: #131212;
+  --nfg: #c5c9c5;
+  --naccent-fg: #2e323c;
+  --nborder: #414754;
+  --ntitle: #b0b5bf;
   --ntitle-accent: #5da6dc;
-  --nlink:         #7f8792;
-  --nlink-accent:  #e0b97d;
+  --nlink: #7f8792;
+  --nlink-accent: #ffbb55;
 
   font-family: var(--font);
-  font-size: var(--font-size-link);
-  border-radius: 0 !important;
-}
-
-
-.HUD {
-  border-radius: 0;
-  text-transform: lowercase;
-  color: var(--title);
-  max-width: 420px;
-  min-width: unset;
-  line-height: 20px;
-  align-items: center;
-  padding: 10px;
-}
-
-.HUD.D {
-  color: var(--ntitle);
-}
-
-.HUD:after {
-  background: var(--bg);
-  border: 1px solid var(--border);
-}
-
-.HUD.D:after {
-  background: var(--nbg);
-  border: 1px solid var(--nborder);
-}
-
-.HUD.UI {
-  min-width: 380px;
-  align-items: unset;
-}
-
-.LH {
-  color: var(--fg);
-  border: 1px solid var(--border);
-  background: var(--bg);
-  box-shadow: var(--shadow);
-  border-radius: 0;
-}
-
-.D .LH {
-  color: var(--nfg);
-  border: 1px solid var(--nborder);
-  background: var(--nbg);
-  box-shadow: var(--shadow);
-  border-radius: 0;
-}
-
-.MC {
-  color: var(--accent-fg);
-}
-
-.D .MC {
-  color: var(--naccent-fg);
-}
-
-body {
-  animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
-  box-shadow: var(--shadow);
-  border-radius: 0 !important;
-}
-
-@keyframes show {
-  0% {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 #toolbar {
@@ -117,12 +45,15 @@ body {
   opacity: 1;
 }
 
+
 #bar,
 #input,
 #list {
   background: var(--bg);
   font-weight: var(--font-weight);
-  border-radius: 0 !important;
+  border-radius: 0px !important;
+  border-color: var(--accent-fg);
+  border-width: 2px;
 }
 
 .has-dark #bar,
@@ -132,28 +63,18 @@ body {
 }
 
 
-/* Outer Vomnibar border */
-
 #bar {
   padding: 10px;
-
-  border: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-
-  box-sizing: border-box;
+  border-width: 1px;
+  border-color: var(--accent-fg);
+  border-radius: 0px !important;
 }
 
-.has-dark #bar {
-  border-color: var(--nborder);
-}
-
-
-/* Prompt arrow */
 
 #bar::before {
   content: "➤";
   position: absolute;
-  left: 20px;
+  left: 25px;
   z-index: 300;
   padding: 6px 0;
   font-weight: bold;
@@ -169,13 +90,26 @@ body {
 #input {
   padding: var(--padding) 38px;
   color: var(--title);
-  border: none;
+  border: 2px;
+  border-radius: 0px !important;
+  border-color: var(--accent-fg);
   box-shadow: none;
-  outline: none;
 }
 
 .has-dark #input {
   color: var(--ntitle);
+}
+
+.item {
+    border-radius: 0px !important;
+}
+
+.item,
+.item:hover,
+.item.s {
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
 }
 
 .item .icon {
@@ -195,47 +129,20 @@ body {
   transform: scale(0.75);
 }
 
-.item {
-  border-radius: 0 !important;
-  border: 3px solid transparent;
-  box-sizing: border-box;
-  background-color: var(--item-bg);
-  transform: none !important;
-}
 
-
+.item.s,
 .item:hover {
   background-color: var(--accent-fg);
-  border: 3px solid transparent;
+  border: 3px transparent solid;
+  border-radius: 0px !important;
   cursor: pointer;
-  background-color: var(--item-bg);
 }
 
-.item.s {
-  background-color: transparent;
-  border: 3px solid transparent;
-  transform: none !important;
-}
-
-.has-dark .item.s {
-  background-color: transparent;
-}
-
-.has-dark .item {
-  background-color: var(--item-bg) !important;
-}
-
-.has-dark .item.s {
-  background-color: var(--naccent-fg) !important;
-}
-
+.has-dark .item.s,
 .has-dark .item:hover {
-  background-color: var(--item-bg) !important;
+  background-color: var(--naccent-fg);
 }
 
-.has-dark .item.s:hover {
-  background-color: var(--naccent-fg) !important;
-}
 
 .item .top {
   color: var(--title);
@@ -246,7 +153,6 @@ body {
 .has-dark .item .top {
   color: var(--ntitle);
 }
-
 
 .item .top .title {
   font-size: var(--font-size);
@@ -288,27 +194,6 @@ body {
 }
 
 .has-dark .item .bottom a match {
-  color: var(--nlink-accent);
-}
-
-.r {
-  color: var(--title-accent);
-  background: var(--bg);
-  border: none;
-  box-shadow: none;
-  border-radius: 0 !important;
-}
-
-.r.D {
-  color: var(--ntitle-accent);
-  background: var(--nbg);
-}
-
-#i {
-  color: var(--link-accent);
-}
-
-.D #i {
   color: var(--nlink-accent);
 }
 
