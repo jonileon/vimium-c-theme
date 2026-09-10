@@ -1,3 +1,58 @@
+/* #ui */
+
+* {
+/*insertroot*/
+
+  --font-size: 17px;
+  --font-size-link: 12px;
+  --font-weight: normal;
+  --font: Source Code Pro, sans;
+  --padding: 0px;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  /* ---------- DAY THEME ---------- */
+
+  --bg: #131212;
+  --fg: #c5c9c5;
+  --accent-fg: #2e323c;
+  --border: #414754;
+  --title: #b0b5bf;
+  --title-accent: #5da6dc;
+  --link: #7f8792;
+  --link-accent: #ffbb55;
+
+  /* ---------- NIGHT THEME ---------- */
+
+  --nbg: #131212;
+  --nfg: #c5c9c5;
+  --naccent-fg: #2e323c;
+  --nborder: #555555;
+  --ntitle: #b0b5bf;
+  --ntitle-accent: #5da6dc;
+  --nlink: #7f8792;
+  --nlink-accent: #ffbb55;
+
+  font-family: var(--font);
+}
+
+.HUD {
+    border: 2px solid transparent;
+    border-radius: 0px;
+    border-color: var(--nborder);
+
+    bottom: 25px;
+    right: 30px;
+
+    font-size: var(--font-size);
+    font: var(--font);
+    color: var(--fg);
+}
+
+.HUD:after {
+    border: none;
+}
+
+
 /* #omni */
 
 * {
