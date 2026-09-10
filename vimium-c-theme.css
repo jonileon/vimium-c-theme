@@ -42,8 +42,10 @@
     border-radius: 0px;
     border-color: var(--attention_grab);
 
+    padding: 3px 15px 3px;
     bottom: 25px;
     right: 30px;
+    min-width: 0px;
 
     font-size: var(--font-size);
     font: var(--font);
