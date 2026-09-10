@@ -20,6 +20,7 @@
   --title-accent: #5da6dc;
   --link: #7f8792;
   --link-accent: #ffbb55;
+  --attention_grab: #ffbb55;
 
   /* ---------- NIGHT THEME ---------- */
 
@@ -31,6 +32,7 @@
   --ntitle-accent: #5da6dc;
   --nlink: #7f8792;
   --nlink-accent: #ffbb55;
+  --nattention_grab: #ffbb55;
 
   font-family: var(--font);
 }
@@ -38,7 +40,7 @@
 .HUD {
     border: 2px solid transparent;
     border-radius: 0px;
-    border-color: var(--nborder);
+    border-color: var(--attention_grab);
 
     bottom: 25px;
     right: 30px;
